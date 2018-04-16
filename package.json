@@ -1,0 +1,23 @@
+{
+  "name": "pico2wave.js",
+  "version": "0.0.1",
+  "description": "JS port of pico2wave (Emscripten)",
+  "main": "dist/pico2wave.js",
+  "scripts": {
+    "build": "make"
+  },
+  "keywords": [
+    "pico2wave",
+    "pico",
+    "svox",
+    "tts",
+    "text-to-speech",
+    "emscripten"
+  ],
+  "author": "Birros <birros@protonmail.com>",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/birros/pico2wave.js.git"
+  }
+}
