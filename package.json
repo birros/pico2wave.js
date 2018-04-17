@@ -4,7 +4,8 @@
   "description": "JS port of pico2wave (Emscripten)",
   "main": "dist/pico2wave.js",
   "scripts": {
-    "build": "make"
+    "build": "make",
+    "prepare": "npm run build"
   },
   "keywords": [
     "pico2wave",
