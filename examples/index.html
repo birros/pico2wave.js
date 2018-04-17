@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>pico2wave.js example</title>
+    </head>
+    <body>
+        <p>
+            <input id="input" value="Bonjour le monde." />
+            <button id="button">Generate</button>
+        </p>
+        <p>
+            <audio id="audio" controls></audio>
+        </p>
+        <blockquote>
+            <div>
+                <strong>For testers:</strong> because this example uses a worker
+                placed in the folder <code>dist</code> of this project, a server
+                must be used to test it, for example:
+            </div>
+            <blockquote><code>
+                cd pico2wave.js && python3 -m http.server
+            </code></blockquote>
+        </blockquote>
+        <blockquote>
+            <strong>For developers:</strong> note that if you want the sound
+            file generated on mobile to be played using a hidden html audio
+            element, it must be played a first time with a blank sound file
+            from an event handler during an action performed by the user.
+        </blockquote>
+        <script src="index.js"></script>
+    </body>
+</html>

@@ -92,4 +92,4 @@ $(POPT_OBJECTS): $(POPT_ARCHIVE)
 
 
 clean:
-	rm -rf $(ARCHIVES_DIR) $(BUILD_DIR) $(DIST_DIR)
+	rm -rf $(ARCHIVES_DIR) $(BUILD_DIR) $(PICO2WAVE)
