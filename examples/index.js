@@ -1,4 +1,5 @@
 var input = document.querySelector("#input");
+var select = document.querySelector("#select");
 var button = document.querySelector("#button");
 var audio = document.querySelector("#audio");
 
@@ -12,10 +13,15 @@ pico2waveWorker.onmessage = function(e) {
 
 input.onkeydown = function(e) {
     if(e.key === "Enter") {
-        pico2waveWorker.postMessage(input.value);
+        postMessage();
     }
 }
 
-button.onclick = function() {
-    pico2waveWorker.postMessage(input.value);
+button.onclick = postMessage;
+
+function postMessage() {
+    pico2waveWorker.postMessage({
+        lang: select.value,
+        text: input.value
+    });
 }
