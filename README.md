@@ -18,11 +18,16 @@ To see how to use this library in a web browser see the `examples` folder.
 ## Building
 
 The __Emscripten__ framework must be installed and configured before compiling
-the package: [Download and install Emscripten].
+the package: [Download and install Emscripten]. Also, `automake` and `libtool`
+must be installed from your distribution repositories.
 
 Then execute the following command to use the recipe in the `Makefile`:
 
     npm run build
+
+To publish this package to the npm repo:
+
+    npm publish
 
 ## License
 
