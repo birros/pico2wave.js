@@ -5,11 +5,11 @@ engine to JavaScript made with [Emscripten].
 
 ## Limitations & contributions
 
-__To limit the size of the JavaScript library only the English (Great Britain)
-and French languages are supported for the moment__. Any contribution aimed at
-improving the portability of other languages supported by Pico TTS while
-limiting the final size of the library is welcome. The idea being, why not, to
-load the language files on the fly.
+__To limit the size of the JavaScript library only the English (Great Britain,
+United States) and French languages are supported for the moment__. Any
+contribution aimed at improving the portability of other languages supported by
+Pico TTS while limiting the final size of the library is welcome. The idea
+being, why not, to load the language files on the fly.
 
 ## Example
 
