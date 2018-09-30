@@ -46,6 +46,10 @@ POPT_OBJECTS = $(POPT_BUILD_DIR)/.libs/libpopt.a
 EMBED_FILES  = --embed-file $(PICO_BUILD_DIR)/lang/en-GB_kh0_sg.bin@/usr/local/share/pico/lang/en-GB_kh0_sg.bin
 EMBED_FILES += --embed-file $(PICO_BUILD_DIR)/lang/en-GB_ta.bin@/usr/local/share/pico/lang/en-GB_ta.bin
 
+# en-US
+EMBED_FILES += --embed-file $(PICO_BUILD_DIR)/lang/en-US_lh0_sg.bin@/usr/local/share/pico/lang/en-US_lh0_sg.bin
+EMBED_FILES += --embed-file $(PICO_BUILD_DIR)/lang/en-US_ta.bin@/usr/local/share/pico/lang/en-US_ta.bin
+
 # fr-FR
 EMBED_FILES += --embed-file $(PICO_BUILD_DIR)/lang/fr-FR_nk0_sg.bin@/usr/local/share/pico/lang/fr-FR_nk0_sg.bin
 EMBED_FILES += --embed-file $(PICO_BUILD_DIR)/lang/fr-FR_ta.bin@/usr/local/share/pico/lang/fr-FR_ta.bin
