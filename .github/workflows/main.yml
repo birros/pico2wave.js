@@ -42,11 +42,12 @@ jobs:
         asset_content_type: application/gzip
 
     # Publish to NPM Registry
-    - name: Publish to NPM Registry
+    - name: Setup Node.js
       uses: actions/setup-node@v1
-      run: npm publish
       with:
         node-version: 12.x
         registry-url: https://registry.npmjs.org
+    - name: Publish to NPM Registry
+      run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
