@@ -14,4 +14,8 @@ ENV EM_CACHE=/emsdk_portable/data/.cache
 ENV EM_PORTS=/emsdk_portable/data/.ports
 ENV PATH=/emsdk_portable/sdk:${PATH}
 
-WORKDIR /src
+ENV GITHUB_WORKSPACE=/src
+
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]

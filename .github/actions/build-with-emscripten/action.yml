@@ -1,0 +1,6 @@
+name: Build with Emscripten
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - make

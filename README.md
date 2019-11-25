@@ -19,7 +19,7 @@ To see how to use this library in a web browser see the `examples` folder.
 
 [Docker] must be installed:
 
-    docker build -t local/emscripten:1.37.36 ./docker
+    docker build -t local/emscripten:1.37.36 ./.github/actions/build-with-emscripten
     docker run --rm -ti -v $(pwd):/src -u $(id -u):$(id -g) local/emscripten:1.37.36 make
 
 ## Building (without Docker)
