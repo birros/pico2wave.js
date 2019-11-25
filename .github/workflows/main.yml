@@ -1,21 +1,42 @@
-on: [push]
+name: Build and publish new version
+
+on:
+  push:
+    tags:
+    - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    # Build
     - name: Checkout
       uses: actions/checkout@v1
     - name: Build with Emscripten
       uses: ./.github/actions/build-with-emscripten
     - name: Create package
-      run: npm pack
-    - name: Get package infos
-      run: echo "##[set-output name=name;]$(npm pack --dry-run 2> /dev/null)"
-      id: package_infos
-    - name: Test use of infos
+      id: create_package
       run: |
-        echo ${FOO}
-        ls -l
+        npm pack
+        echo "##[set-output name=name;]$(npm pack --dry-run 2> /dev/null)"
+
+    # Publish to GitHub Release
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1.0.0
       env:
-        FOO: ${{ steps.package_infos.outputs.name }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: ${{ github.ref }}
+        draft: false
+        prerelease: false
+    - name: Upload Release Asset
+      uses: actions/upload-release-asset@v1.0.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ${{ steps.create_package.outputs.name }}
+        asset_name: ${{ steps.create_package.outputs.name }}
+        asset_content_type: application/gzip
