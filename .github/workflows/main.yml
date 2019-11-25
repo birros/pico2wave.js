@@ -40,3 +40,13 @@ jobs:
         asset_path: ${{ steps.create_package.outputs.name }}
         asset_name: ${{ steps.create_package.outputs.name }}
         asset_content_type: application/gzip
+
+    # Publish to NPM Registry
+    - name: Publish to NPM Registry
+      uses: actions/setup-node@v1
+      run: npm publish
+      with:
+        node-version: 12.x
+        registry-url: https://registry.npmjs.org
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
