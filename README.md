@@ -15,7 +15,14 @@ being, why not, to load the language files on the fly.
 
 To see how to use this library in a web browser see the `examples` folder.
 
-## Building
+## Building (with Docker)
+
+[Docker] must be installed:
+
+    docker build -t local/emscripten:1.37.36 ./docker
+    docker run --rm -ti -v $(pwd):/src -u $(id -u):$(id -g) local/emscripten:1.37.36 make
+
+## Building (without Docker)
 
 The __Emscripten__ framework must be installed and configured before compiling
 the package: [Download and install Emscripten]. Also, `automake` and `libtool`
@@ -24,6 +31,8 @@ must be installed from your distribution repositories.
 Then execute the following command to use the recipe in the `Makefile`:
 
     npm run build
+
+## Publishing
 
 To publish this package to the npm repo:
 
@@ -39,3 +48,4 @@ this page: [Copyright for svox source package].
 [Emscripten]: https://kripken.github.io/emscripten-site/
 [Download and install Emscripten]: https://kripken.github.io/emscripten-site/docs/getting_started/downloads.html
 [Copyright for svox source package]: https://launchpad.net/ubuntu/bionic/+source/svox/+copyright
+[Docker]: https://docs.docker.com/install/

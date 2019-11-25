@@ -74,6 +74,7 @@ $(PICO_OBJECTS): $(POPT_OBJECTS) $(SVOX_ARCHIVE) $(SVOX_DEB_ARCHIVE)
 		chmod +x autogen.sh && \
 		emconfigure ./autogen.sh && \
 		emconfigure ./configure CFLAGS="-I../../popt -L../../popt/.libs -L.libs" && \
+		mkdir .libs && \
 		emcmake make
 
 
@@ -82,6 +83,7 @@ $(POPT_OBJECTS): $(POPT_ARCHIVE)
 	tar -xvf $(POPT_ARCHIVE) -C $(POPT_BUILD_DIR) --strip-components=1
 	cd $(POPT_BUILD_DIR) && \
 		emconfigure ./configure CFLAGS="-L.libs" && \
+		mkdir .libs && \
 		emcmake make
 
 
