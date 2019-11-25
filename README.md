@@ -1,5 +1,7 @@
 # pico2wave.js
 
+[![Publish_Image][]][Publish_Link]
+
 This is a port of the pico2wave command line tool from the Pico text-to-speech
 engine to JavaScript made with [Emscripten].
 
@@ -45,7 +47,11 @@ license. However, some restrictions exist in the original package, making it a
 non-free library, especially regarding language files. For more information see
 this page: [Copyright for svox source package].
 
+<!--Links-->
+
 [Emscripten]: https://kripken.github.io/emscripten-site/
 [Download and install Emscripten]: https://kripken.github.io/emscripten-site/docs/getting_started/downloads.html
 [Copyright for svox source package]: https://launchpad.net/ubuntu/bionic/+source/svox/+copyright
 [Docker]: https://docs.docker.com/install/
+[Publish_Image]: https://github.com/birros/pico2wave.js/workflows/Build%20and%20publish%20new%20version/badge.svg
+[Publish_Link]: https://github.com/birros/pico2wave.js
